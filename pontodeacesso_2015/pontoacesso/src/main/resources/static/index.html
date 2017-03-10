@@ -1,0 +1,133 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8" />
+<title>Ponto de Acesso - Portal de Acessibilidade</title>
+<link rel="icon" type="image/png" href="/public/favicon.ico"></link>
+<link rel="stylesheet" href="webjars/bootstrap/3.3.5/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="webjars/font-awesome/4.4.0/css/font-awesome.css" />
+<link rel="stylesheet" href="webjars/flat-ui/bcaf2de95e/css/flat-ui.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/build.css" />
+<link rel="stylesheet"
+	src="webjars/startbootstrap-simple-sidebar/1.0.4/css/simple-sidebar.css"></link>
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+<link rel="stylesheet" src="webjars/startbootstrap-simple-sidebar/1.0.4/css/simple-sidebar.css"></link>
+</head>
+<body ng-controller="MarkerCtrl">
+	<!-- Sidebar -->
+	<div id="sidebar-wrapper" >
+	<!-- nav-top-logo -->
+	<!--<nav class="navbar navbar-default logo">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<img alt="Ponto de Acesso" src="img/logos/logo-ponto-de-acesso.png">
+				</a>
+			</div>
+		</div>
+	</nav>-->
+	<!-- sidebar -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="container-sidebar col-xs-12 col-sm-4">
+				<!-- navbar -->
+				<nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+					<div class="navbar-header">
+					<a class="navbar-brand" href="#">
+						<img alt="Ponto de Acesso" src="img/logos/logo-ponto-de-acesso.png">
+					</a>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+						<button type="button" class="btn btn-default navbar-toggle" data-toggle="collapse"
+							data-target="#navbar-collapse-01">
+							<span class="sr-only">Toggle navigation</span> <i
+								class="fa fa-bars fa-lg"></i>
+						</button>
+					</div>
+					<div class="navbar-collapse collapse" id="navbar-collapse-01">
+					<label>Encontre Pontos de Acessibilidade em qualquer ponto da cidade!</label>
+						<div class="nav navbar-nav navbar-left sidebar-nav">
+							<div class="checkbox-info">
+								<label> Sobre Nós </label>
+							</div>
+							<div class="checkbox-info">
+								<label> Contato</label>
+							</div>
+							<div class="checkbox-info">
+								<label> Como Posso Ajudar ?</label>
+							</div>						
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<!-- modal desinstalacao -->
+	<div class="modal fade" id="addMarker">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Adicionar Marcador</h3>
+				</div>
+				<div class="modal-body">
+					<div class="modal-wrapper">
+						<div class="col agendamento">
+							<p>Digite o endereço do novo marcador</p>
+							<div class="form-group">
+								<label>Endereço: </label> <input type="text"
+									class="form-control" name="endereco"
+									ng-model="pontoAcessoView.endereco" required />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="right">
+						<button type="button" data-dismiss="modal" aria-label="Close"
+							class="btn btn-transp cancel">Cancelar</button>
+						<button type="button" class="btn btn-success"
+							ng-click="addMarker(pontoAcessoView.endereco)">Salvar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- /#sidebar-wrapper -->
+	<div id="page-content-wrapper">
+		<div>
+			<!--<div class="ng-view-mapa" id="map"></div>-->
+			<iframe src="https://www.google.com/maps/d/embed?mid=zM9JqNC_VxAc.kwIsxxe-xbjs" class="container-mapa col-xs-12 col-sm-8" ></iframe>
+		</div>
+	</div>
+	</div>
+
+	
+
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script src="webjars/jquery/2.1.4/jquery.js"></script>
+	<script src="webjars/bootstrap/3.3.5/js/bootstrap.js"></script>
+	<script src="webjars/angularjs/1.4.4/angular.js"></script>
+	<script src="webjars/angularjs/1.4.4/angular-route.js"></script>
+	<script src="webjars/angular-google-maps/2.1.1/angular-google-maps.js"></script>
+	<script src="js/jquery.mCustomScrollbar.min.js"></script>
+	<script src="js/jquery.mousewheel.min.js"></script>
+	<script src="js/layout.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/services.js"></script>
+	<!-- Menu Toggle Script -->
+	<script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+	</script>
+</body>
+</html>
